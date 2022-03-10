@@ -1,3 +1,43 @@
+<br />
+<div><span matBadge="5">Notifications</span></div>
+<div>
+  <span
+    [matBadge]="notifications"
+    [matBadgeHidden]="zeronotifications === 0"
+    matBadgePosition="above before"
+    >Notifications property binded</span
+  >
+</div>
+<div>
+  <span [matBadge]="notifications" matBadgePosition="above before"
+    >Notifications property binded</span
+  >
+</div>
+<div>
+  <span matBadge="5" matBadgePosition="below before">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgePosition="below after">Notifications</span>
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeSize="small"
+    >Notifications</span
+  >
+</div>
+<div>
+  <span matBadge="5" matBadgeColor="accent" matBadgeSize="medium"
+    >Notifications</span
+  >
+</div>
+<div>
+  <span
+    matBadge="5"
+    matBadgeColor="primary"
+    matBadgeOverlap="false"
+    matBadgeSize="large"
+    >Notifications no overlap</span
+  >
+</div>
 <mat-icon color="primary">grade</mat-icon>
 <mat-icon color="accent">android</mat-icon>
 <mat-icon color="warn">fingerprint</mat-icon>
