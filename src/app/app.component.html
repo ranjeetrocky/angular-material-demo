@@ -1,23 +1,24 @@
 <div>
-  <button mat-button>push me daddy!</button>
-  <button mat-raised-button>push me daddy!</button>
-  <button mat-flat-button>push me daddy!</button>
-  <button mat-stroked-button>push me daddy!</button>
+  <mat-button-toggle #toggleButton checked>Toggle Button</mat-button-toggle>
+  {{ toggleButton.checked }}
 </div>
 <div>
-  <button mat-icon-button>icon</button>
-  <button mat-fab>fab</button>
-  <button mat-mini-fab>mini fab</button>
+  <mat-button-toggle disableRipple #toggleButton2 checked
+    >Toggle Button</mat-button-toggle
+  >
+  {{ toggleButton2.checked }}
 </div>
-<div>
-  <button color="primary" mat-button>Primary</button>
-  <button color="accent" mat-button>accent</button>
-  <button color="warn" mat-button>warn</button>
-  <button color="primary" mat-raised-button>Primary</button>
-  <button color="accent" mat-raised-button>accent</button>
-  <button color="warn" mat-raised-button>warn</button>
-  <button color="primary" disableRipple mat-button>Disabled Primary</button>
-  <button color="accent" disableRipple mat-button>Disabled accent</button>
-  <button color="warn" disableRipple mat-button>Disabled warn</button>
-</div>
+<mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+  <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+  <mat-button-toggle value="vue">vue</mat-button-toggle>
+  <mat-button-toggle value="React">React</mat-button-toggle>
+</mat-button-toggle-group>
+{{ toggleGroup.value }}
+<br />
+<mat-button-toggle-group #toggleGroupMultiple="matButtonToggleGroup" multiple>
+  <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+  <mat-button-toggle value="vue">vue</mat-button-toggle>
+  <mat-button-toggle value="React">React</mat-button-toggle>
+</mat-button-toggle-group>
+{{ toggleGroupMultiple.value }}
 <router-outlet></router-outlet>
