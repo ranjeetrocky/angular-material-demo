@@ -46,6 +46,13 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Radio">
+                <mat-radio-group>
+                    <mat-radio-button color="primary" value="Angular">Angular</mat-radio-button><br>
+                    <mat-radio-button color="warn" value="React">React</mat-radio-button><br>
+                    <mat-radio-button color="accent" value="Vue">Vue</mat-radio-button><br>
+                </mat-radio-group>
+            </mat-tab>
             <mat-tab label="CheckBox">
                 <mat-checkbox color="primary">Subscribe</mat-checkbox><br>
                 <mat-checkbox color="warn">Subscribe</mat-checkbox><br>
