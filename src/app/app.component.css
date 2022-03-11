@@ -30,3 +30,7 @@ mat-sidenav {
 .compo {
     justify-content: inherit;
 }
+
+mat-grid-tile {
+    background-color: aquamarine;
+}

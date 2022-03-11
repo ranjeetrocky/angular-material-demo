@@ -85,6 +85,15 @@
                 <p mat-line>Line 2</p>
             </mat-list-item>
         </mat-list>
+        <mat-grid-list cols="2" rowHeight="fit" style="height: 200px;" gutterSize="10px">
+            <!-- <mat-grid-list cols="2" rowHeight="2:1"> -->
+            <!-- <mat-grid-list cols="2" rowHeight="200px"> -->
+            <mat-grid-tile rowspan="2">MatGridTile 1</mat-grid-tile>
+            <mat-grid-tile>MatGridTile 2</mat-grid-tile>
+            <mat-grid-tile>MatGridTile 3</mat-grid-tile>
+            <mat-grid-tile colspan="2">MatGridTile 4</mat-grid-tile>
+            <mat-grid-tile>MatGridTile 5</mat-grid-tile>
+        </mat-grid-list>
 
     </mat-sidenav-content>
 </mat-sidenav-container>
