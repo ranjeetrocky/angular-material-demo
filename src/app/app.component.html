@@ -45,6 +45,74 @@
                 </mat-menu>
             </mat-menu>
         </mat-toolbar>
+        <h3>Non Linear Steppers</h3>
+        <mat-horizontal-stepper>
+            <mat-step label="Shipping Address Details">Shipping Address Details<div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Billing Address Details">Billing Address Details
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Place Order">Place Order<div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+        <mat-vertical-stepper>
+            <mat-step label="Shipping Address Details">Shipping Address Details<div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Billing Address Details">Billing Address Details<div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Place Order">Place Order<div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
+        <h3>Linear Steppers</h3>
+        <mat-horizontal-stepper linear>
+            <mat-step label="Shipping Address Details" completed="false">Shipping Address Details<div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Billing Address Details" completed="false">Billing Address Details
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Place Order" completed="false">Place Order<div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+        <mat-vertical-stepper linear>
+            <mat-step label="Shipping Address Details" completed="false">Shipping Address Details<div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Billing Address Details" completed="false">Billing Address Details<div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Place Order" completed="false">Place Order<div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)">
             <mat-tab label="Home">Home</mat-tab>
             <mat-tab label="About">About</mat-tab>
