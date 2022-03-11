@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, Observable, startWith } from 'rxjs';
 
 @Component({
@@ -33,7 +34,7 @@ export class AppComponent {
     );
   }
 
-  constructor() {
+  constructor(private snackbar: MatSnackBar) {
     console.log(new Date(Date.now()));
     setInterval(() => {
       this.progress <= 100 ? this.progress++ : (this.progress = 0);
@@ -48,5 +49,14 @@ export class AppComponent {
   }
   logChangeTab(int: number) {
     console.log('Tab Changed to = ' + int);
+  }
+  showSnackBar(message: string, action: string) {
+    let snackbarRef = this.snackbar.open(message, action, { duration: 2000 });
+    snackbarRef.afterDismissed().subscribe(() => {
+      console.log('Snackbar is Dismissed');
+    });
+    snackbarRef.onAction().subscribe(() => {
+      console.log('Snackbar action was triggered');
+    });
   }
 }
