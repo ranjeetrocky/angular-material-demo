@@ -11,6 +11,8 @@ export class AppComponent {
   zeronotifications = 2;
   progress = 0;
   opened = false;
+  selectedValue: any;
+
   constructor() {
     setInterval(() => {
       this.progress <= 100 ? this.progress++ : (this.progress = 0);

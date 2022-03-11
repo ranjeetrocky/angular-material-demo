@@ -46,6 +46,53 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Select">
+                <mat-form-field>
+                    <mat-label>Select</mat-label>
+                    <mat-select [(value)]="selectedValue" #selectMenu required>
+                        <mat-option>none</mat-option>
+                        <mat-option value="Vue">Vue</mat-option>
+                        <mat-option value="React">React</mat-option>
+                        <mat-option value="Angular">Angular</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                {{selectedValue}}
+                {{selectMenu.value}}
+                <mat-form-field>
+                    <mat-label>Select Opt Group</mat-label>
+                    <mat-select #selectMenu2 required>
+                        <mat-option>none</mat-option>
+                        <mat-optgroup label="Web">
+                            <mat-option value="Vue">Vue</mat-option>
+                            <mat-option value="React">React</mat-option>
+                            <mat-option value="Angular">Angular</mat-option>
+                        </mat-optgroup>
+                        <mat-optgroup label="Mobile">
+                            <mat-option value="ionic">Ionic</mat-option>
+                            <mat-option value="flutter">Flutter</mat-option>
+                            <mat-option value="reactnative">React Native</mat-option>
+                        </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
+                {{selectMenu2.value}}
+                <mat-form-field>
+                    <mat-label>Opt Group + Multiple</mat-label>
+                    <mat-select #selectMenu3 required multiple>
+                        <mat-option>none</mat-option>
+                        <mat-optgroup label="Web">
+                            <mat-option value="Vue">Vue</mat-option>
+                            <mat-option value="React">React</mat-option>
+                            <mat-option value="Angular">Angular</mat-option>
+                        </mat-optgroup>
+                        <mat-optgroup label="Mobile">
+                            <mat-option value="ionic">Ionic</mat-option>
+                            <mat-option value="flutter">Flutter</mat-option>
+                            <mat-option value="reactnative">React Native</mat-option>
+                        </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
+                {{selectMenu3.value}}
+            </mat-tab>
             <mat-tab label="Input & Form Field">
                 <mat-form-field floatLabel="auto">
                     <mat-label>floatLabel auto / Default</mat-label><input matInput>
