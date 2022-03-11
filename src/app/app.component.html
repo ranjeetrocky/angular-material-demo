@@ -47,6 +47,25 @@
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
             <mat-tab label="Select">
+                <form>
+                    <mat-form-field>
+                        <mat-label>Autocomplete Array</mat-label>
+                        <input type="text" matInput [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Autocomplete Map</mat-label>
+                        <input type="text" matInput [matAutocomplete]="auto2map">
+                        <mat-autocomplete #auto2map="matAutocomplete">
+                            <mat-option *ngFor="let option of objectOptions" [value]="option">{{option.name}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </mat-tab>
+            <mat-tab label="Select">
                 <mat-form-field>
                     <mat-label>Select</mat-label>
                     <mat-select [(value)]="selectedValue" #selectMenu required>

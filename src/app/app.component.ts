@@ -12,6 +12,13 @@ export class AppComponent {
   progress = 0;
   opened = false;
   selectedValue: any;
+  options = ['Angular', 'React', 'Vue'];
+  objectOptions = [
+    { name: 'Angular' },
+    { name: 'React' },
+    { name: 'AngularMaterial' },
+    { name: 'Vue' },
+  ];
 
   constructor() {
     setInterval(() => {
