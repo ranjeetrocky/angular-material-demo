@@ -46,6 +46,10 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Tooltip"><br>
+                <button mat-raised-button matTooltip="wannakkam to ranjeetrocky">Hello</button>
+                <br><br>
+            </mat-tab>
             <mat-tab label="Date Picker">
                 <mat-form-field appearance="outline">
                     <mat-label>Date</mat-label>
