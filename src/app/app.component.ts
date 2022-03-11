@@ -19,4 +19,7 @@ export class AppComponent {
   log(string: string) {
     console.log(string);
   }
+  logChangeTab(int: number) {
+    console.log('Tab Changed to = ' + int);
+  }
 }

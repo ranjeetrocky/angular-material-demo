@@ -45,6 +45,12 @@
                 </mat-menu>
             </mat-menu>
         </mat-toolbar>
+        <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)">
+            <mat-tab label="Home">Home</mat-tab>
+            <mat-tab label="About">About</mat-tab>
+            <mat-tab label="Contact Us">Contact Us</mat-tab>
+        </mat-tab-group>
+        Selected Tab = {{ tabRef.selectedIndex}}
         <br>
         <mat-card>Mat Basic Card</mat-card>
         <br>
