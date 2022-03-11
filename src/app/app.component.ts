@@ -59,4 +59,15 @@ export class AppComponent {
       console.log('Snackbar action was triggered');
     });
   }
+  showCustomSnackBar(message: string, action: string) {
+    this.snackbar.openFromComponent(customSnackbarComponent, {
+      duration: 2000,
+    });
+  }
 }
+
+@Component({
+  selector: 'custom-snackbar',
+  template: '<span style="color:orange">Custom Snackbar</span>',
+})
+export class customSnackbarComponent {}
