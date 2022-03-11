@@ -34,3 +34,8 @@ mat-sidenav {
 mat-grid-tile {
     background-color: aquamarine;
 }
+
+mat-expansion-panel {
+    margin-left: 16px;
+    margin-right: 16px;
+}

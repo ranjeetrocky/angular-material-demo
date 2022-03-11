@@ -45,6 +45,69 @@
                 </mat-menu>
             </mat-menu>
         </mat-toolbar>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Angular Fundamentals</mat-panel-title>
+                <mat-panel-description>Total Duration : 3 hours</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the panel content add course Details </p>
+            <mat-action-row>
+                <button mat-button>Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Angular Material</mat-panel-title>
+                <mat-panel-description>Total Duration : 2 hours</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the panel content add course Details </p>
+            <mat-action-row>
+                <button mat-button>Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>React</mat-panel-title>
+                <mat-panel-description>Total Duration : 5 hours</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the panel content add course Details </p>
+            <mat-action-row>
+                <button mat-button>Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <mat-accordion multi="true" hideToggle>
+            <!-- <mat-accordion> -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Angular Fundamentals</mat-panel-title>
+                    <mat-panel-description>Total Duration : 3 hours</mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>This is the panel content add course Details </p>
+                <mat-action-row>
+                    <button mat-button>Enroll</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Angular Material</mat-panel-title>
+                    <mat-panel-description>Total Duration : 2 hours</mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>This is the panel content add course Details </p>
+                <mat-action-row>
+                    <button mat-button>Enroll</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>React</mat-panel-title>
+                    <mat-panel-description>Total Duration : 5 hours</mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>This is the panel content add course Details </p>
+                <mat-action-row>
+                    <button mat-button>Enroll</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
         <mat-menu #lazyMenu="matMenu">
             <ng-template matMenuContent let-name="name" let-hobby="hobby">
                 <button mat-menu-item>Settings</button>
