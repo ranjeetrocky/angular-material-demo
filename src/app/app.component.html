@@ -46,6 +46,41 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Input & Form Field">
+                <mat-form-field floatLabel="auto">
+                    <mat-label>floatLabel auto / Default</mat-label><input matInput>
+                </mat-form-field><br>
+                <mat-form-field floatLabel="never">
+                    <mat-label>floatLabel never</mat-label><input matInput>
+                </mat-form-field><br>
+                <mat-form-field floatLabel="always">
+                    <mat-label>floatLabel always</mat-label><input matInput>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <mat-label>required field</mat-label><input matInput required>
+                    <mat-hint align="end">min 5 characters</mat-hint>
+                </mat-form-field><br>
+                <mat-form-field hideRequiredMarker>
+                    <mat-label>required field hideRequiredMarker</mat-label><input matInput required>
+                    <mat-hint align="end">min 5 characters</mat-hint>
+                </mat-form-field><br>
+                <mat-form-field appearance="legacy">
+                    <mat-label>appearance="legacy"</mat-label><input matInput required>
+                    <mat-hint align="end">min 5 characters</mat-hint>
+                </mat-form-field><br>
+                <mat-form-field appearance="outline">
+                    <mat-label>appearance="outline"</mat-label><input matInput required>
+                    <mat-hint align="end">min 5 characters</mat-hint>
+                </mat-form-field><br>
+                <mat-form-field appearance="standard" hideRequiredMarker>
+                    <mat-label>appearance="standard"</mat-label><input matInput required>
+                    <mat-hint align="end">min 5 characters</mat-hint>
+                </mat-form-field><br>
+                <mat-form-field appearance="fill">
+                    <mat-label>appearance="fill"</mat-label><input matInput required>
+                    <mat-hint align="end">min 5 characters</mat-hint>
+                </mat-form-field><br>
+            </mat-tab>
             <mat-tab label="Home">Home</mat-tab>
             <mat-tab label="Steppers">
                 <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)">
