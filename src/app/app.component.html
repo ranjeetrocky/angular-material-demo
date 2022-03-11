@@ -46,6 +46,20 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Date Picker">
+                <mat-form-field appearance="outline">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="myDatePicker">
+                    <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #myDatePicker></mat-datepicker>
+                </mat-form-field><br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Day of Week</mat-label>
+                    <input matInput [matDatepicker]="myDatePicker2" [min]="weekAgo" [max]="today">
+                    <mat-datepicker-toggle matSuffix [for]="myDatePicker2"></mat-datepicker-toggle>
+                    <mat-datepicker #myDatePicker2></mat-datepicker>
+                </mat-form-field>
+            </mat-tab>
             <mat-tab label="Radio">
                 <mat-radio-group>
                     <mat-radio-button color="primary" value="Angular">Angular</mat-radio-button><br>
@@ -404,7 +418,7 @@
             </mat-tab>
             <mat-tab label="About">About</mat-tab>
             <mat-tab label="Contact Us">Contact Us</mat-tab>
-        </mat-tab-group>
+        </mat-tab-group><br><br>
         Selected Tab = {{ tabRef.selectedIndex}}
         <br>
         <mat-menu #lazyMenu="matMenu">

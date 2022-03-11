@@ -23,6 +23,8 @@ export class AppComponent {
   ];
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
+  today = new Date();
+  weekAgo = new Date(Date.now() - 6 * 86400 * 1000);
 
   _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -32,6 +34,7 @@ export class AppComponent {
   }
 
   constructor() {
+    console.log(new Date(Date.now()));
     setInterval(() => {
       this.progress <= 100 ? this.progress++ : (this.progress = 0);
     }, 16);
