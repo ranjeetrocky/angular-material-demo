@@ -1,79 +1,66 @@
-<br />
-<mat-toolbar color="primary"> <span>Manan Domadiya</span> </mat-toolbar
-><br /><br />
-<mat-toolbar color="primary" class="navbar">
-  <span>Manan Domadiya</span>
-  <span>
-    <span>Home</span>
-    <span>Services</span>
-    <span>About</span>
-  </span>
-</mat-toolbar>
-<mat-spinner></mat-spinner>
-<mat-progress-spinner [value]="progress"></mat-progress-spinner>
-<div><span matBadge="5">Notifications</span></div>
-<div>
-  <span
-    [matBadge]="notifications"
-    [matBadgeHidden]="zeronotifications === 0"
-    matBadgePosition="above before"
-    >Notifications property binded</span
+<mat-sidenav-container>
+    <mat-sidenav (opened)="log('opened')" (closed)="log('closed')" #sidenav mode="over"><button class="mat-icon-button" (click)="sidenav.close()" mat-icon-button>
+      <mat-icon>arrow_back</mat-icon></button
+    >Exit</mat-sidenav
   >
-</div>
-<div>
-  <span [matBadge]="notifications" matBadgePosition="above before"
-    >Notifications property binded</span
-  >
-</div>
-<div>
-  <span matBadge="5" matBadgePosition="below before">Notifications</span>
-</div>
-<div>
-  <span matBadge="5" matBadgePosition="below after">Notifications</span>
-</div>
-<div>
-  <span matBadge="5" matBadgeColor="warn" matBadgeSize="small"
-    >Notifications</span
-  >
-</div>
-<div>
-  <span matBadge="5" matBadgeColor="accent" matBadgeSize="medium"
-    >Notifications</span
-  >
-</div>
-<div>
-  <span
-    matBadge="5"
-    matBadgeColor="primary"
-    matBadgeOverlap="false"
-    matBadgeSize="large"
-    >Notifications no overlap</span
-  >
-</div>
-<mat-icon color="primary">grade</mat-icon>
-<mat-icon color="accent">android</mat-icon>
-<mat-icon color="warn">fingerprint</mat-icon>
-<div>
-  <mat-button-toggle #toggleButton checked>Toggle Button</mat-button-toggle>
-  {{ toggleButton.checked }}
-</div>
-<div>
-  <mat-button-toggle disableRipple #toggleButton2 checked
-    >Toggle Button</mat-button-toggle
-  >
-  {{ toggleButton2.checked }}
-</div>
-<mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
-  <mat-button-toggle value="Angular">Angular</mat-button-toggle>
-  <mat-button-toggle value="vue">vue</mat-button-toggle>
-  <mat-button-toggle value="React">React</mat-button-toggle>
-</mat-button-toggle-group>
-{{ toggleGroup.value }}
-<br />
-<mat-button-toggle-group #toggleGroupMultiple="matButtonToggleGroup" multiple>
-  <mat-button-toggle value="Angular">Angular</mat-button-toggle>
-  <mat-button-toggle value="vue">vue</mat-button-toggle>
-  <mat-button-toggle value="React">React</mat-button-toggle>
-</mat-button-toggle-group>
-{{ toggleGroupMultiple.value }}
+  <!-- <mat-sidenav [(opened)]="opened" mode="push">Sidenav</mat-sidenav> -->
+  <!-- <mat-sidenav [(opened)]="opened" mode="side">Sidenav</mat-sidenav> -->
+  <mat-sidenav-content
+    ><mat-toolbar color="primary" class="navbar">
+      <span class="compo">
+        <span
+          ><button
+            class="mat-icon-button"
+            (click)="sidenav.open()"
+            mat-icon-button
+          >
+            <mat-icon>menu</mat-icon>
+          </button></span>
+        <span>Manan Domadiya</span></span>
+
+        <span class="compo">
+        <span float="right">Home</span>
+        <span float="right">Services</span>
+        <span float="right">About</span>
+        <button mat-icon-button [mat-menu-trigger-for]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button></span>
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item [mat-menu-trigger-for]="frontMenu">
+          Front End
+        </button>
+            <mat-menu #frontMenu="matMenu" xPosition="before">
+                <button mat-menu-item>React</button>
+                <button mat-menu-item>Angular</button>
+                <button mat-menu-item>Vue</button>
+            </mat-menu>
+            <button mat-menu-item [mat-menu-trigger-for]="backMenu">
+          Back End
+        </button>
+            <mat-menu #backMenu="matMenu" yPosition="below">
+                <button mat-menu-item>React</button>
+                <button mat-menu-item>Angular</button>
+                <button mat-menu-item>Vue</button>
+            </mat-menu>
+        </mat-menu>
+        </mat-toolbar>
+        <mat-menu #lazyMenu="matMenu">
+            <ng-template matMenuContent let-name="name" let-hobby="hobby">
+                <button mat-menu-item>Settings</button>
+                <button mat-menu-item>Hobby is {{ hobby }}</button>
+                <button mat-menu-item>Log Out {{ name }}</button>
+            </ng-template>
+        </mat-menu>
+        <button [mat-menu-trigger-for]="lazyMenu" [matMenuTriggerData]="{ name: 'Manan', hobby: 'football' }" mat-button>
+      Manan
+    </button>
+        <button [mat-menu-trigger-for]="lazyMenu" [matMenuTriggerData]="{
+        name: 'RanjeetRocky',
+        hobby: 'farting in public'
+      }" mat-button>
+      RanjeetRocky
+    </button>
+        </mat-sidenav-content>
+</mat-sidenav-container>
+
 <router-outlet></router-outlet>

@@ -14,3 +14,19 @@ div {
 span {
     padding-right: 1rem;
 }
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    padding: 16px;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+.compo {
+    justify-content: inherit;
+}

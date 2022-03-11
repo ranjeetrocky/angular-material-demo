@@ -10,9 +10,13 @@ export class AppComponent {
   notifications = 2;
   zeronotifications = 2;
   progress = 0;
+  opened = false;
   constructor() {
     setInterval(() => {
       this.progress <= 100 ? this.progress++ : (this.progress = 0);
     }, 16);
+  }
+  log(string: string) {
+    console.log(string);
   }
 }
