@@ -1,48 +1,49 @@
 <mat-sidenav-container>
-    <mat-sidenav (opened)="log('opened')" (closed)="log('closed')" #sidenav mode="over"><button class="mat-icon-button" (click)="sidenav.close()" mat-icon-button>
-      <mat-icon>arrow_back</mat-icon></button
-    >Exit</mat-sidenav
-  >
-  <!-- <mat-sidenav [(opened)]="opened" mode="push">Sidenav</mat-sidenav> -->
-  <!-- <mat-sidenav [(opened)]="opened" mode="side">Sidenav</mat-sidenav> -->
-  <mat-sidenav-content
-    ><mat-toolbar color="primary" class="navbar">
-      <span class="compo">
-        <span
-          ><button
-            class="mat-icon-button"
-            (click)="sidenav.open()"
-            mat-icon-button
-          >
-            <mat-icon>menu</mat-icon>
-          </button></span>
-        <span>Manan Domadiya</span></span>
+    <mat-sidenav (opened)="log('opened')" (closed)="log('closed')" #sidenav mode="over"><button class="mat-icon-button"
+            (click)="sidenav.close()" mat-icon-button>
+            <mat-icon>arrow_back</mat-icon>
+        </button>Exit
+        <mat-nav-list>
+            <a href="#" mat-list-item>Home</a>
+            <a href="#" mat-list-item>About</a>
+            <a href="#" mat-list-item>Contact Us</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <!-- <mat-sidenav [(opened)]="opened" mode="push">Sidenav</mat-sidenav> -->
+    <!-- <mat-sidenav [(opened)]="opened" mode="side">Sidenav</mat-sidenav> -->
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" class="navbar">
+            <span class="compo">
+                <span><button class="mat-icon-button" (click)="sidenav.open()" mat-icon-button>
+                        <mat-icon>menu</mat-icon>
+                    </button></span>
+                <span>Manan Domadiya</span></span>
 
-        <span class="compo">
-        <span float="right">Home</span>
-        <span float="right">Services</span>
-        <span float="right">About</span>
-        <button mat-icon-button [mat-menu-trigger-for]="appMenu">
-          <mat-icon>more_vert</mat-icon>
-        </button></span>
-        <mat-menu #appMenu="matMenu">
-            <button mat-menu-item [mat-menu-trigger-for]="frontMenu">
-          Front End
-        </button>
-            <mat-menu #frontMenu="matMenu" xPosition="before">
-                <button mat-menu-item>React</button>
-                <button mat-menu-item>Angular</button>
-                <button mat-menu-item>Vue</button>
+            <span class="compo">
+                <span float="right">Home</span>
+                <span float="right">Services</span>
+                <span float="right">About</span>
+                <button mat-icon-button [mat-menu-trigger-for]="appMenu">
+                    <mat-icon>more_vert</mat-icon>
+                </button></span>
+            <mat-menu #appMenu="matMenu">
+                <button mat-menu-item [mat-menu-trigger-for]="frontMenu">
+                    Front End
+                </button>
+                <mat-menu #frontMenu="matMenu" xPosition="before">
+                    <button mat-menu-item>React</button>
+                    <button mat-menu-item>Angular</button>
+                    <button mat-menu-item>Vue</button>
+                </mat-menu>
+                <button mat-menu-item [mat-menu-trigger-for]="backMenu">
+                    Back End
+                </button>
+                <mat-menu #backMenu="matMenu" yPosition="below">
+                    <button mat-menu-item>React</button>
+                    <button mat-menu-item>Angular</button>
+                    <button mat-menu-item>Vue</button>
+                </mat-menu>
             </mat-menu>
-            <button mat-menu-item [mat-menu-trigger-for]="backMenu">
-          Back End
-        </button>
-            <mat-menu #backMenu="matMenu" yPosition="below">
-                <button mat-menu-item>React</button>
-                <button mat-menu-item>Angular</button>
-                <button mat-menu-item>Vue</button>
-            </mat-menu>
-        </mat-menu>
         </mat-toolbar>
         <mat-menu #lazyMenu="matMenu">
             <ng-template matMenuContent let-name="name" let-hobby="hobby">
@@ -51,16 +52,41 @@
                 <button mat-menu-item>Log Out {{ name }}</button>
             </ng-template>
         </mat-menu>
-        <button [mat-menu-trigger-for]="lazyMenu" [matMenuTriggerData]="{ name: 'Manan', hobby: 'football' }" mat-button>
-      Manan
-    </button>
+        <button [mat-menu-trigger-for]="lazyMenu" [matMenuTriggerData]="{ name: 'Manan', hobby: 'football' }"
+            mat-button>
+            Manan
+        </button>
         <button [mat-menu-trigger-for]="lazyMenu" [matMenuTriggerData]="{
         name: 'RanjeetRocky',
         hobby: 'farting in public'
       }" mat-button>
-      RanjeetRocky
-    </button>
-        </mat-sidenav-content>
+            RanjeetRocky
+        </button>
+        <mat-list>
+            <mat-list-item>item 1</mat-list-item>
+            <mat-list-item>item 2</mat-list-item>
+            <mat-list-item>item 3</mat-list-item>
+        </mat-list>
+        <mat-list dense>
+            <mat-list-item>List item 1 dense</mat-list-item>
+            <mat-list-item>List item 2 dense</mat-list-item>
+            <mat-list-item>List item 3 dense</mat-list-item>
+        </mat-list>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon mat-list-icon>home</mat-icon>
+                <h3 mat-line>Home</h3>
+                <p mat-line>Line</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <mat-icon mat-list-icon color="warn">folder</mat-icon>
+                <h3 mat-line>Folders</h3>
+                <p mat-line>Line 2</p>
+            </mat-list-item>
+        </mat-list>
+
+    </mat-sidenav-content>
 </mat-sidenav-container>
 
 <router-outlet></router-outlet>
