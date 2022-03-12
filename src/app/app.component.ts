@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, Observable, startWith } from 'rxjs';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +36,7 @@ export class AppComponent {
     );
   }
 
-  constructor(private snackbar: MatSnackBar) {
+  constructor(private snackbar: MatSnackBar, public dialog: MatDialog) {
     console.log(new Date(Date.now()));
     setInterval(() => {
       this.progress <= 100 ? this.progress++ : (this.progress = 0);
@@ -62,6 +64,14 @@ export class AppComponent {
   showCustomSnackBar(message: string, action: string) {
     this.snackbar.openFromComponent(customSnackbarComponent, {
       duration: 2000,
+    });
+  }
+  showDialog() {
+    let dialogRef = this.dialog.open(DialogExampleComponent, {
+      data: { name: 'Manan' },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result : ${result}`);
     });
   }
 }

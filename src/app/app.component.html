@@ -46,6 +46,9 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Dialog">
+                <button mat-raised-button color="primary" (click)="showDialog()">Show Dialog</button>
+            </mat-tab>
             <mat-tab label="Snack Bar">
                 <br>
                 <button mat-raised-button color="primary" (click)="showSnackBar('Hello Student','Dismiss')">Show Snack
