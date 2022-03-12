@@ -46,6 +46,12 @@
             </mat-menu>
         </mat-toolbar>
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
+            <mat-tab label="Virtual Scrolling">
+                <cdk-virtual-scroll-viewport itemSize="100" class="container">
+                    <mat-card *cdkVirtualFor="let num of numbers" mat-card class="number">{{num}}</mat-card>
+                </cdk-virtual-scroll-viewport>
+                <!-- <mat-card *ngFor="let num of numbers" mat-card class="number">{{num}}</mat-card> -->
+            </mat-tab>
             <mat-tab label="Dialog">
                 <button mat-raised-button color="primary" (click)="showDialog()">Show Dialog</button>
             </mat-tab>

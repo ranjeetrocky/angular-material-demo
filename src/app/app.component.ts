@@ -28,6 +28,7 @@ export class AppComponent {
   filteredOptions: Observable<string[]>;
   today = new Date();
   weekAgo = new Date(Date.now() - 6 * 86400 * 1000);
+  numbers: number[] = [];
 
   _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -35,7 +36,7 @@ export class AppComponent {
       option.toLowerCase().includes(filterValue)
     );
   }
-
+  num = 1;
   constructor(private snackbar: MatSnackBar, public dialog: MatDialog) {
     console.log(new Date(Date.now()));
     setInterval(() => {
@@ -45,6 +46,9 @@ export class AppComponent {
       startWith(''),
       map((value) => this._filter(value))
     );
+    while (this.numbers.length != 10000) {
+      this.numbers.push(this.num++);
+    }
   }
   log(string: string) {
     console.log(string);

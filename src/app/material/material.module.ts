@@ -26,6 +26,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -54,6 +55,7 @@ const MaterialComponents = [
   MatTooltipModule,
   MatSnackBarModule,
   MatDialogModule,
+  ScrollingModule,
 ];
 
 @NgModule({
