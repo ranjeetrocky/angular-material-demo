@@ -48,7 +48,7 @@
         <mat-tab-group #tabRef (selectedTabChange)="logChangeTab(tabRef.selectedIndex!)" dynamicHeight>
             <mat-tab label="Virtual Scrolling">
                 <cdk-virtual-scroll-viewport itemSize="100" class="container">
-                    <mat-card *cdkVirtualFor="let num of numbers" mat-card class="number">{{num}}</mat-card>
+                    <mat-card *cdkVirtualFor="let num of numbers" mat-card class="number" cdkDrag>{{num}}</mat-card>
                 </cdk-virtual-scroll-viewport>
                 <!-- <mat-card *ngFor="let num of numbers" mat-card class="number">{{num}}</mat-card> -->
             </mat-tab>
